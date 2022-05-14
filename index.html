@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea Modal AGM</title>
+    <link rel="stylesheet" href="assets/css/sistematico.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    
+    
+</head>
+<body>
+    <h3>Sistematico AGM</h3>
+    <button id="btnModalBody">Añadir Persona</button>
+    <hr>
+    <div id="modalBody" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h3>Formulario CRUD</h3>
+                <hr>
+            </div>
+            <div class="modal-body">
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                        <label for="cedula">Cedula:</label>
+                        <input id="cedula" onkeyup="quitarGuion()">
+                        <br>
+                        <label for="nombres">Nombres:</label>
+                        <input id="nombres">
+                        <br>
+                        <label for="apellidos">Apellidos:</label>
+                        <input id="apellidos">
+                        <br>
+                        <label for="sexo">Sexo:</label>
+                        <br>
+                        <input type="radio" name="radioSx" value="Masculino" id="rdMasculino">Masculino
+                        <br>
+                        <input type="radio" name="radioSx" value="Femenino" id="rdFemenino">Femenino
+                        <br>
+                        <label for="hijos">Num Hijos:</label>
+                        <input id="hijos" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                </fieldset>
+                <fieldset>
+                    <legend>Profesiones</legend>
+                        <select id="profesiones">
+                            <option></option>
+                            <option value="Licenciado en Contabilidad">Licenciado en Contabilidad</option>
+                            <option value="Licenciado en administracion de Empresas">Licenciado en administracion de Empresas</option>
+                            <option value="Ingeniero Industrial">Ingeniero Industrial</option>
+                            <option value="Ingeniero en Sistemas">Ingeniero en Sistemas</option>
+                            <option value="Igeniero Civil">Igeniero Civil</option>
+                            <option value="Ingeniero Quimico">Ingeniero Quimico</option>
+                        </select>
+                </fieldset>
+                <button id="btnSave" onclick="insertarData()">Registrar</button>
+            </div>
+        </div>
+            
+            
+        </div>
+    </div>
+    <fieldset>
+        <legend>Datos Personales</legend>
+        <table id="tablaRegistros">
+           <tr>
+               <th>Cédula</th>
+               <th>Nombres</th>
+               <th>Apellidos</th>
+               <th>Sexo</th>
+               <th>Número Hijos</th>
+               <th>Profesion</th>
+               <th>Acciones Crud</th>
+           </tr>
+        </table>
+    </fieldset>
+    <script src="assets/js/sistematico.js"></script>
+    <script src="assets/js/site.js"></script>
+</body>
+</html>
